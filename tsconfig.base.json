@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@swe-demo/shared-domain": ["libs/shared/domain/src/index.ts"],
+      "@swe-demo/shared-feature": ["libs/shared/feature/src/index.ts"],
+      "@swe-demo/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@swe-demo/shared-util": ["libs/shared/util/src/index.ts"],
+      "@swe-demo/swe-demo-app-domain": [
+        "libs/swe-demo-app/domain/src/index.ts"
+      ],
+      "@swe-demo/swe-demo-app-feature": [
+        "libs/swe-demo-app/feature/src/index.ts"
+      ],
+      "@swe-demo/swe-demo-app-ui": ["libs/swe-demo-app/ui/src/index.ts"],
+      "@swe-demo/swe-demo-app-util": ["libs/swe-demo-app/util/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
