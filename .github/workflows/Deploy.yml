@@ -38,7 +38,7 @@ jobs:
           for i in {1..5}; do
             echo "Attempt $i to run EF migrations..."
             # Executes the migration command using a connection string composed of secrets
-            dotnet ef database update --startup-project <Path to startup project> --project <Path to migrations project> --connection "Server=tcp:${{ secrets.AZURE_SQL_SERVER }}.database.windows.net,1433;Initial Catalog=${{ secrets.AZURE_SQL_DB }};Persist Security Info=False;User ID=${{ secrets.AZURE_SQL_ADMIN }};Password=${{ secrets.AZURE_SQL_PASSWORD }};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" && break
+            dotnet ef database update --startup-project ./apps/swe-demo-api --project ./libs/swe-demo-backend/SweDemoBackend.Infrastructure --connection "Server=tcp:${{ secrets.AZURE_SQL_SERVER }}.database.windows.net,1433;Initial Catalog=${{ secrets.AZURE_SQL_DB }};Persist Security Info=False;User ID=${{ secrets.AZURE_SQL_ADMIN }};Password=${{ secrets.AZURE_SQL_PASSWORD }};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" && break
             echo "Migration failed, retrying in 10 seconds..."
             sleep 10
           done
